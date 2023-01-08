@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Match = () => {
   <article className="Match">
     <h1>
