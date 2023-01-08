@@ -9,3 +9,5 @@ const Match = () => {
     <h2>No winners yet!</h2>
   </article>;
 };
+
+export default Match;

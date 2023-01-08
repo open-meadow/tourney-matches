@@ -6,3 +6,5 @@ const PlayerList = () => {
     </section>
   )
 }
+
+export default PlayerList;

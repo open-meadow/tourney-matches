@@ -4,3 +4,5 @@ const MatchList = () => {
     {/* Matches will be shown here */}
   </section>;
 };
+
+export default MatchList;
