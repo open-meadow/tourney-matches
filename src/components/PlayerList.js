@@ -8,10 +8,17 @@ const PlayerList = () => {
   const playerDataArray = preparePlayerData(playerData);
   const parsedPlayerData = addWinsToPlayers(playerDataArray, matchData);
 
+  const onePlayer = parsedPlayerData[0];
+
   return (
     <section className="PlayerList">
       <h1>Current Participating Players</h1>
-      <Player/>
+      <Player
+        gamerTag={onePlayer.gamerTag}
+        firstName={onePlayer.firstName}
+        lastName={onePlayer.lastName}
+        wins={onePlayer.wins}
+      />
 
     </section>
   )
