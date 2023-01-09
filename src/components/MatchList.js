@@ -1,20 +1,23 @@
 import React from "react";
-import matchData from "../data/matchData";
 import Match from "./Match";
 
-const MatchList = () => {
-  const oneMatch = matchData[0];
+const MatchList = (props) => {
+  const oneMatch = props.matchData[0];
+  const matches = props.matchData.map(match => {
+    return <Match
+        key={match.matchNumber}
+        players={match.players}
+        winner={match.winner}
+        scoreDifference={match.scoreDifference}
+      />
+  });
 
   return (
     <section className="PlayerList MatchList">
       <h1>Match list</h1>
-      <Match
-        players={oneMatch.players}
-        winner={oneMatch.winner}
-        scoreDifference={oneMatch.scoreDifference}
-      />
+      {matches}
     </section>
   );
-};
+}
 
 export default MatchList;

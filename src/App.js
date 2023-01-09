@@ -1,10 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
+import matchData from "./data/matchData";
+import playerData from "./data/playerData";
+import { preparePlayerData, addWinsToPlayers } from "./helpers/playerHelpers";
 
 import MatchList from "./components/MatchList";
 import PlayerList from "./components/PlayerList";
 
 function App() {
+  const playerDataArray = preparePlayerData(playerData);
+  const parsedPlayerData = addWinsToPlayers(playerDataArray, matchData);
+
   return (
     <div className="App">
       <h1>
@@ -12,8 +17,8 @@ function App() {
         <span>Where Coding and Tournaments found their Match!</span>
       </h1>
 
-      <PlayerList/>
-      <MatchList/>
+      <PlayerList playerData={parsedPlayerData} />
+      <MatchList matchData={matchData}/>
     </div>
   );
 }
